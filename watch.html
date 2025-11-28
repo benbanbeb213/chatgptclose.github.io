@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Closed - Watch</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="watch-body">
+
+<div class="watch-container">
+
+    <div class="video-area">
+        <video id="player" controls width="100%" height="100%" autoplay></video>
+    </div>
+
+    <div class="episode-list">
+        <h2>Episodes</h2>
+        <div class="episodes">
+            <button onclick="loadEp(1)">1</button>
+            <button onclick="loadEp(2)">2</button>
+            <button onclick="loadEp(3)">3</button>
+            <button onclick="loadEp(4)">4</button>
+            <button onclick="loadEp(5)">5</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+// episode video urls
+const eps = {
+    1: "https://rrr.hub26link.site/pkpk/c5/h6a90f70b8d237f94866b6cfc2c6349bddedc7dc1328a916ba76c347576a168b0f558899eb0e27ac0c102a43593dab20563433f013ccb0bbe198bcdd60ebb5bf2/list,Ktm0Vt9-cJyXbGG_O3gV_5vGK-kpiQ.m3u8",
+    2: "https://rrr.pro25zone.site/p83e/c5/h6a90f70b8d237f94866b6cfc2c7906afdb8423c6639e9e32f0742e3037b160b4eb5c9d8cb9be75c7c50ae72297d2e44d3b0879042c960fe70a8ac89d53a146e35d/list,Ktm0Vt9-cJyXbGG_O3gV_5vGK-kpiQ.m3u8",
+    3: "https://rrr.hub26link.site/pz78/c5/h6a90f70b8d237f94866b6cfc286349bddedc7dc1328a9163a76b28752cfe69ace95b899eb0e27ac0c102a43593daa34230433f013ccb0bbe198bcdd60ebb5bf2/list,Ktm0Vt9-cJyXbGG_O3gV_5vGK-kpiQ.m3u8",
+    4: "https://rrr.shop21pro.site/p5qm/c5/h6a90f70b8d237f94866b6cfc2a6349bddedc7dc1328a916ba73537752bfe76aff60e899eb0e27ac0c102a43593daec046543241c31890fe30097c9d60ebb5bf2/list,Ktm0Vt9-cJyXbGG_O3gV_5vGK-kpiQ.m3u8",
+    5: "https://rrr.net22lab.site/pmjz/c5/h6a90f70b8d237f94866b6cfc2b6349bddedc7dc1328a9167a73d28752dfe68ace85c899eb0e27ac0c102a43593dab41f724339112acb0fbe1187888b14a64a/list,Ktm0Vt9-cJyXbGG_O3gV_5vGK-kpiQ.m3u8"
+};
+
+function loadEp(n){
+    document.getElementById("player").src = eps[n];
+}
+loadEp(1); // load episode 1 by default
+</script>
+
+</body>
+</html>
