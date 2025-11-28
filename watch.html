@@ -28,6 +28,9 @@
 
 </div>
 
+<!-- HLS.JS library -->
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
 <script>
 // episode video urls
 const eps = {
@@ -38,10 +41,28 @@ const eps = {
     5: "https://rrr.net22lab.site/pmjz/c5/h6a90f70b8d237f94866b6cfc2b6349bddedc7dc1328a9167a73d28752dfe68ace85c899eb0e27ac0c102a43593dab41f724339112acb0fbe1187888b14a64a/list,Ktm0Vt9-cJyXbGG_O3gV_5vGK-kpiQ.m3u8"
 };
 
+// load episode with HLS
 function loadEp(n){
-    document.getElementById("player").src = eps[n];
+    const url = eps[n];
+    const video = document.getElementById("player");
+
+    // Destroy old HLS instance if it exists
+    if (window.hls) {
+        window.hls.destroy();
+    }
+
+    if (Hls.isSupported()) {
+        window.hls = new Hls();
+        hls.loadSource(url);
+        hls.attachMedia(video);
+    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+        // Safari native support
+        video.src = url;
+    }
 }
-loadEp(1); // load episode 1 by default
+
+// load episode 1 on page open
+loadEp(1);
 </script>
 
 </body>
